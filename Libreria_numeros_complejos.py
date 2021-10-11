@@ -101,7 +101,17 @@ def accionmatriz_vector(matrix, vector):
     :param vector: vector de complejos
     :return: accion de la matriz sobre un vector
     """
-    return multiplicacion_matrices(matrix, vector)
+    if len(matrix[0]) == len(vector):
+        accion = []
+        for i in range(len(matrix)):
+            accion.append((0, 0))
+        for i in range(len(matrix)):
+            for j in range(len(vector)):
+                for k in range(len(matrix[0])):
+                    accion[i] = suma_complejos(accion[i], multiplicacion_complejos(matrix[i][k], vector[j]))
+        return accion
+    else:
+        return False
 
 
 def multiplicacion_matrices(matrix1, matrix2):

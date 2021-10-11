@@ -19,10 +19,10 @@ def interferencias(matriz):
     for i in range(len(matriz)):
         for j in range(len(matriz)):
             tempo = 0
-            for l in range(len(matriz[i])):
+            for k in range(len(matriz[i])):
                 tempo1 = matriz[i][k] * matriz[k][j] + tempo
                 if tempo1 == tempo and (matriz[i][j] != 0 or matriz[j][i] != 0):
-                    matriz_interfe += [[i,j]]
+                    matriz_interfe += [[i, j]]
 
     return matriz_interfe
 
